@@ -1,17 +1,21 @@
-//
-//  late_summer_tcaApp.swift
-//  late_summer_tca
-//
-//  Created by Branislav Bilý on 30.08.2024.
-//
-
+import ComposableArchitecture
 import SwiftUI
 
 @main
 struct late_summer_tcaApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+	var body: some Scene {
+		WindowGroup {
+			FSTab(store: .init(
+				initialState: .init(
+					components: IdentifiedArray(uniqueElements: [
+						FSTabModel(id: "1", selected: true, title: "All"),
+						FSTabModel(id: "2", selected: false, title: "Players"),
+						FSTabModel(id: "3", selected: false, title: "Teams"),
+					]),
+					favouritesSelected: false
+				),
+				reducer: { FSTabReducer() }
+			))
+		}
+	}
 }
