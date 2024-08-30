@@ -1,7 +1,6 @@
 import ComposableArchitecture
 import SwiftUI
 
-
 struct FSTab: View {
 
 	private let store: StoreOf<FSTabReducer>
@@ -11,23 +10,18 @@ struct FSTab: View {
 	}
 
 	public var body: some View {
-		HStack(spacing: 8) {
-			WithPerceptionTracking {
-				ForEach(store.components) { tab in
-					Tab(text: tab.title, active: tab.selected)
-						.onTapGesture {
-							store.send(.tabSelected(tabId: tab.id))
-						}
-				}
-
-//				Atoms.NavigationBar.Item(model: .init(type: .favoritesEditOrder, action: {
-//					store.send(.buttonClicked)
-//				}))
-//				.foregroundColor(.fs.contentTertiary)
-//				.padding(.trailing, 16)
-//				.padding(.vertical, 16)
-//				.tag(Tag.actionButton)
+		HStack {
+			ForEach(store.components) { tab in
+				Tab(text: tab.title, active: tab.selected)
+					.onTapGesture {
+						store.send(.tabSelected(tabId: tab.id))
+					}
 			}
+			
+			Image(systemName: store.favouritesSelected ? "heart.fill" : "heart")
+				.onTapGesture {
+					store.send(.buttonClicked)
+				}
 		}
 	}
 
@@ -42,7 +36,30 @@ struct Tabs_Secondary_Preview: PreviewProvider {
 	}
 
 	static var example: some View {
-		EmptyView()
+		VStack {
+			FSTab(store: .init(
+				initialState: .init(
+					components: IdentifiedArray(uniqueElements: [
+						FSTabModel(id: "1", selected: true, title: "All"),
+						FSTabModel(id: "2", selected: false, title: "Players"),
+						FSTabModel(id: "3", selected: false, title: "Teams"),
+					]),
+					favouritesSelected: false
+				),
+				reducer: { FSTabReducer() }
+			))
+			FSTab(store: .init(
+				initialState: .init(
+					components: IdentifiedArray(uniqueElements: [
+						FSTabModel(id: "1", selected: true, title: "All"),
+						FSTabModel(id: "2", selected: false, title: "Players"),
+						FSTabModel(id: "3", selected: false, title: "Teams"),
+					]),
+					favouritesSelected: true
+				),
+				reducer: { FSTabReducer() }
+			))
+		}
 	}
 
 }

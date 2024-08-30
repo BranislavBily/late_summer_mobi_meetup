@@ -14,6 +14,11 @@
 		B59170642C81BF6100168A71 /* late_summer_tcaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170632C81BF6100168A71 /* late_summer_tcaTests.swift */; };
 		B591706E2C81BF6100168A71 /* late_summer_tcaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591706D2C81BF6100168A71 /* late_summer_tcaUITests.swift */; };
 		B59170702C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591706F2C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift */; };
+		B591708E2C81E21900168A71 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B591708D2C81E21900168A71 /* ComposableArchitecture */; };
+		B59170952C81E34000168A71 /* FSTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170902C81E34000168A71 /* FSTab.swift */; };
+		B59170962C81E34000168A71 /* FSTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170912C81E34000168A71 /* FSTabModel.swift */; };
+		B59170972C81E34000168A71 /* FSTabReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170922C81E34000168A71 /* FSTabReducer.swift */; };
+		B59170982C81E34000168A71 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170932C81E34000168A71 /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,10 @@
 		B59170692C81BF6100168A71 /* late_summer_tcaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = late_summer_tcaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B591706D2C81BF6100168A71 /* late_summer_tcaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaUITests.swift; sourceTree = "<group>"; };
 		B591706F2C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B59170902C81E34000168A71 /* FSTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTab.swift; sourceTree = "<group>"; };
+		B59170912C81E34000168A71 /* FSTabModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTabModel.swift; sourceTree = "<group>"; };
+		B59170922C81E34000168A71 /* FSTabReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTabReducer.swift; sourceTree = "<group>"; };
+		B59170932C81E34000168A71 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B591708E2C81E21900168A71 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,7 @@
 				B59170622C81BF6100168A71 /* late_summer_tcaTests */,
 				B591706C2C81BF6100168A71 /* late_summer_tcaUITests */,
 				B59170502C81BF5E00168A71 /* Products */,
+				B591708C2C81E21900168A71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +105,7 @@
 		B59170512C81BF5E00168A71 /* late_summer_tca */ = {
 			isa = PBXGroup;
 			children = (
+				B59170942C81E34000168A71 /* FSTab */,
 				B59170522C81BF5E00168A71 /* late_summer_tcaApp.swift */,
 				B59170542C81BF5E00168A71 /* ContentView.swift */,
 				B59170562C81BF6100168A71 /* Assets.xcassets */,
@@ -127,6 +139,24 @@
 			path = late_summer_tcaUITests;
 			sourceTree = "<group>";
 		};
+		B591708C2C81E21900168A71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B59170942C81E34000168A71 /* FSTab */ = {
+			isa = PBXGroup;
+			children = (
+				B59170902C81E34000168A71 /* FSTab.swift */,
+				B59170912C81E34000168A71 /* FSTabModel.swift */,
+				B59170922C81E34000168A71 /* FSTabReducer.swift */,
+				B59170932C81E34000168A71 /* Tab.swift */,
+			);
+			path = FSTab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +173,9 @@
 			dependencies = (
 			);
 			name = late_summer_tca;
+			packageProductDependencies = (
+				B591708D2C81E21900168A71 /* ComposableArchitecture */,
+			);
 			productName = late_summer_tca;
 			productReference = B591704F2C81BF5E00168A71 /* late_summer_tca.app */;
 			productType = "com.apple.product-type.application";
@@ -260,8 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59170962C81E34000168A71 /* FSTabModel.swift in Sources */,
 				B59170552C81BF5E00168A71 /* ContentView.swift in Sources */,
 				B59170532C81BF5E00168A71 /* late_summer_tcaApp.swift in Sources */,
+				B59170982C81E34000168A71 /* Tab.swift in Sources */,
+				B59170972C81E34000168A71 /* FSTabReducer.swift in Sources */,
+				B59170952C81E34000168A71 /* FSTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +633,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B591708D2C81E21900168A71 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B591708B2C81DE5900168A71 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B59170472C81BF5E00168A71 /* Project object */;
 }

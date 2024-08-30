@@ -25,6 +25,7 @@ public struct FSTabReducer {
 				state.components[id: tabId]?.selected = true
 				return .none
 			case .buttonClicked:
+				state.favouritesSelected = !state.favouritesSelected
 				return .none
 			}
 		}
