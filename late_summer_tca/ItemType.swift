@@ -1,4 +1,4 @@
-enum ItemType: Hashable {
+enum ItemType: String, Hashable {
 	case Player
 	case Team
 }

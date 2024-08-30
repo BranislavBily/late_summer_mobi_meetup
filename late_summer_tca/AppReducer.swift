@@ -25,26 +25,17 @@ public struct AppReducer {
 		Reduce { state, action in
 			switch action {
 			case .start:
-				return .run { [tab = state.currentTab, favourite = state.favourite] send in
-					let items = await DataSource().getData(type: tab, favourite)
-					await send(.dataReceived(items))
-				}
+				return getData(&state)
 
 			case let .tabs(.tabSelected(tabId: _, tabTitle: tabTitle)):
 				state.listItems = []
 				state.currentTab = tabTitle
-				return .run { [tab = state.currentTab, favourite = state.favourite] send in
-					let items = await DataSource().getData(type: tab, favourite)
-					await send(.dataReceived(items))
-				}
+				return getData(&state)
 
 			case let .tabs(.favouritesChanged(favourite)):
 				state.listItems = []
 				state.favourite = favourite
-				return .run { [tab = state.currentTab, favourite = state.favourite] send in
-					let items = await DataSource().getData(type: tab, favourite)
-					await send(.dataReceived(items))
-				}
+				return getData(&state)
 
 			case .tabs(.buttonClicked):
 				return .none
@@ -53,6 +44,13 @@ public struct AppReducer {
 				state.listItems = newItems
 				return .none
 			}
+		}
+	}
+
+	private func getData(_ state: inout State) -> Effect<Action> {
+		return .run { [tab = state.currentTab, favourite = state.favourite] send in
+			let items = await DataSource().getData(type: tab, favourite)
+			await send(.dataReceived(items))
 		}
 	}
 
