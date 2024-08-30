@@ -13,6 +13,7 @@ public struct FSTabReducer {
 	public enum Action: Equatable {
 		case tabSelected(tabId: String, tabTitle: String)
 		case buttonClicked
+		case favouritesChanged(Bool)
 	}
 
 	public var body: some ReducerOf<Self> {
@@ -25,8 +26,14 @@ public struct FSTabReducer {
 				})
 				state.components[id: tabId]?.selected = true
 				return .none
+
 			case .buttonClicked:
 				state.favouritesSelected = !state.favouritesSelected
+				return .run { [favourite = state.favouritesSelected] send in
+					await send(.favouritesChanged(favourite))
+				}
+
+			case .favouritesChanged(_):
 				return .none
 			}
 		}

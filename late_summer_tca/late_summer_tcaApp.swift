@@ -16,6 +16,8 @@ struct late_summer_tcaApp: App {
 						]),
 						favouritesSelected: false
 					),
+					currentTab: "All",
+					favourite: false,
 					listItems: .init()
 				),
 				reducer: { AppReducer() }
