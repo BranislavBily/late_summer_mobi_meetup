@@ -14,7 +14,7 @@ struct FSTab: View {
 			ForEach(store.components) { tab in
 				Tab(text: tab.title, active: tab.selected)
 					.onTapGesture {
-						store.send(.tabSelected(tabId: tab.id))
+						store.send(.tabSelected(tabId: tab.id, tabTitle: tab.title))
 					}
 			}
 			
@@ -39,6 +39,7 @@ struct Tabs_Secondary_Preview: PreviewProvider {
 		VStack {
 			FSTab(store: .init(
 				initialState: .init(
+					id: "1",
 					components: IdentifiedArray(uniqueElements: [
 						FSTabModel(id: "1", selected: true, title: "All"),
 						FSTabModel(id: "2", selected: false, title: "Players"),
@@ -50,6 +51,7 @@ struct Tabs_Secondary_Preview: PreviewProvider {
 			))
 			FSTab(store: .init(
 				initialState: .init(
+					id: "2",
 					components: IdentifiedArray(uniqueElements: [
 						FSTabModel(id: "1", selected: true, title: "All"),
 						FSTabModel(id: "2", selected: false, title: "Players"),
