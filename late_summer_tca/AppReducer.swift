@@ -32,7 +32,7 @@ public struct AppReducer {
 				state.currentTab = tabTitle
 				return getData(&state)
 
-			case let .tabs(.favouritesChanged(favourite)):
+			case let .tabs(.changeFavourites(favourite)):
 				state.listItems = []
 				state.favourite = favourite
 				return getData(&state)

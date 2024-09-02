@@ -22,6 +22,7 @@ struct late_summer_tcaApp: App {
 				),
 				reducer: { AppReducer() }
 			))
+			.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
 		}
 	}
 }

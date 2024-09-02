@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52899042C8212EC00CDFDAB /* FSTabReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52899022C8212EC00CDFDAB /* FSTabReducerTests.swift */; };
 		B59170532C81BF5E00168A71 /* late_summer_tcaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170522C81BF5E00168A71 /* late_summer_tcaApp.swift */; };
 		B59170552C81BF5E00168A71 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170542C81BF5E00168A71 /* AppView.swift */; };
 		B59170572C81BF6100168A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59170562C81BF6100168A71 /* Assets.xcassets */; };
 		B591705A2C81BF6100168A71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59170592C81BF6100168A71 /* Preview Assets.xcassets */; };
-		B59170642C81BF6100168A71 /* late_summer_tcaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170632C81BF6100168A71 /* late_summer_tcaTests.swift */; };
 		B591706E2C81BF6100168A71 /* late_summer_tcaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591706D2C81BF6100168A71 /* late_summer_tcaUITests.swift */; };
 		B59170702C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591706F2C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift */; };
 		B591708E2C81E21900168A71 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B591708D2C81E21900168A71 /* ComposableArchitecture */; };
@@ -45,13 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52899022C8212EC00CDFDAB /* FSTabReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTabReducerTests.swift; sourceTree = "<group>"; };
 		B591704F2C81BF5E00168A71 /* late_summer_tca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = late_summer_tca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59170522C81BF5E00168A71 /* late_summer_tcaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaApp.swift; sourceTree = "<group>"; };
 		B59170542C81BF5E00168A71 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		B59170562C81BF6100168A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B59170592C81BF6100168A71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B591705F2C81BF6100168A71 /* late_summer_tcaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = late_summer_tcaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B59170632C81BF6100168A71 /* late_summer_tcaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaTests.swift; sourceTree = "<group>"; };
 		B59170692C81BF6100168A71 /* late_summer_tcaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = late_summer_tcaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B591706D2C81BF6100168A71 /* late_summer_tcaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaUITests.swift; sourceTree = "<group>"; };
 		B591706F2C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		B59170622C81BF6100168A71 /* late_summer_tcaTests */ = {
 			isa = PBXGroup;
 			children = (
-				B59170632C81BF6100168A71 /* late_summer_tcaTests.swift */,
+				B52899022C8212EC00CDFDAB /* FSTabReducerTests.swift */,
 			);
 			path = late_summer_tcaTests;
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59170642C81BF6100168A71 /* late_summer_tcaTests.swift in Sources */,
+				B52899042C8212EC00CDFDAB /* FSTabReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

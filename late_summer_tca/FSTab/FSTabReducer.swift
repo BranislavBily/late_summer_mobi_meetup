@@ -5,7 +5,7 @@ public struct FSTabReducer {
 
 	@ObservableState
 	public struct State: Equatable, Identifiable {
-		public let id: String
+		public var id: String
 		public var components: IdentifiedArrayOf<FSTabModel>
 		public var favouritesSelected: Bool
 	}
@@ -13,13 +13,12 @@ public struct FSTabReducer {
 	public enum Action: Equatable {
 		case tabSelected(tabId: String, tabTitle: String)
 		case buttonClicked
-		case favouritesChanged(Bool)
+		case changeFavourites(Bool)
 	}
 
 	public var body: some ReducerOf<Self> {
 		Reduce { state, action in
 			switch action {
-
 			case let .tabSelected(tabId, _):
 				state.components = IdentifiedArray(uniqueElements: state.components.map { tab in
 					FSTabModel(id: tab.id, selected: false, title: tab.title)
@@ -28,12 +27,12 @@ public struct FSTabReducer {
 				return .none
 
 			case .buttonClicked:
-				state.favouritesSelected = !state.favouritesSelected
 				return .run { [favourite = state.favouritesSelected] send in
-					await send(.favouritesChanged(favourite))
+					await send(.changeFavourites(!favourite))
 				}
 
-			case .favouritesChanged(_):
+			case let .changeFavourites(value):
+				state.favouritesSelected = value
 				return .none
 			}
 		}

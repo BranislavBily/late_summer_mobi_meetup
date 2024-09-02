@@ -14,6 +14,7 @@ struct AppView: View {
 			FSTab(store: store.scope(state: \.tabs, action: \.tabs))
 			ListView(items: store.listItems)
         }
+		.frame(alignment: .top)
         .padding()
 		.task { await store.send(.start).finish() }
     }

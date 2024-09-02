@@ -8,20 +8,18 @@ struct DataSource {
 		.init(hearted: true, text: "Player3", type: .Player),
 	]
 
-	func getData(type: String,_ hearted: Bool) async -> [ListItemModel] {
-		try? await Task.sleep(nanoseconds: 1 * 1_000_000_000)
+	func getData(type: String, _ hearted: Bool) async -> [ListItemModel] {
+		try? await Task.sleep(nanoseconds: 1 * 250_000_000)
 
-		// Simulate returning some data
 		return data.filter { item in
 			switch type {
-			case "All" where item.hearted == hearted: true
+			case "All" where item.hearted == hearted || !hearted: true
 
-			case "Players" where item.hearted == hearted : item.type == .Player
+			case "Players" where item.hearted == hearted || !hearted: item.type == .Player
 
-			case "Teams" where item.hearted == hearted: item.type == .Team
+			case "Teams" where item.hearted == hearted || !hearted: item.type == .Team
 
 			default: false
-
 			}
 		}
 	}
