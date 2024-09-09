@@ -1,23 +1,24 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct FSTab: View {
+struct Tabs: View {
 
-	private let store: StoreOf<FSTabReducer>
+	private let store: StoreOf<TabsReducer>
 
-	public init(store: StoreOf<FSTabReducer>) {
+	public init(store: StoreOf<TabsReducer>) {
 		self.store = store
 	}
 
 	public var body: some View {
 		HStack {
 			ForEach(store.components) { tab in
-				Tab(text: tab.title, active: tab.selected)
+				TabItem(text: tab.title, active: tab.selected)
 					.onTapGesture {
-						store.send(.tabSelected(tabId: tab.id, tabTitle: tab.title))
+						store.send(.tabSelected(tabId: tab.id))
 					}
 			}
-			
+			.animation(.default, value: store.components)
+
 			Image(systemName: store.favouritesSelected ? "heart.fill" : "heart")
 				.onTapGesture {
 					store.send(.buttonClicked)
@@ -28,7 +29,7 @@ struct FSTab: View {
 }
 
 #if DEBUG
-struct Tabs_Secondary_Preview: PreviewProvider {
+struct Tabs_Preview: PreviewProvider {
 
 	static var previews: some View {
 		example
@@ -37,29 +38,29 @@ struct Tabs_Secondary_Preview: PreviewProvider {
 
 	static var example: some View {
 		VStack {
-			FSTab(store: .init(
+			Tabs(store: .init(
 				initialState: .init(
 					id: "1",
 					components: IdentifiedArray(uniqueElements: [
-						FSTabModel(id: "1", selected: true, title: "All"),
-						FSTabModel(id: "2", selected: false, title: "Players"),
-						FSTabModel(id: "3", selected: false, title: "Teams"),
+						TabModel(selected: true, title: "All"),
+						TabModel(selected: false, title: "Players"),
+						TabModel(selected: false, title: "Teams"),
 					]),
 					favouritesSelected: false
 				),
-				reducer: { FSTabReducer() }
+				reducer: { TabsReducer() }
 			))
-			FSTab(store: .init(
+			Tabs(store: .init(
 				initialState: .init(
 					id: "2",
 					components: IdentifiedArray(uniqueElements: [
-						FSTabModel(id: "1", selected: true, title: "All"),
-						FSTabModel(id: "2", selected: false, title: "Players"),
-						FSTabModel(id: "3", selected: false, title: "Teams"),
+						TabModel(selected: true, title: "All"),
+						TabModel(selected: false, title: "Players"),
+						TabModel(selected: false, title: "Teams"),
 					]),
 					favouritesSelected: true
 				),
-				reducer: { FSTabReducer() }
+				reducer: { TabsReducer() }
 			))
 		}
 	}

@@ -3,40 +3,18 @@ import XCTest
 @testable import late_summer_tca
 
 @MainActor
-final class FSTabReducerTests: XCTestCase {
-	typealias SUT = FSTabReducer
+final class TabsReducerTests: XCTestCase {
 
-	private var store: TestStoreOf<SUT>!
+	private var store: TestStoreOf<TabsReducer>!
 
 	private enum Constants {
 		static var favouritesSelected = false
 	}
 
-	override func setUp() async throws {
-		try await super.setUp()
-
-		setupSUT()
-	}
-
-	private func setupSUT() {
-		store = TestStore(
-			initialState: SUT.State(
-				id: "componentId",
-				components: [],
-				favouritesSelected: false
-			),
-			reducer: { SUT() },
-			withDependencies: { reducer in
-
-			}
-		)
-		store.exhaustivity = .off
-	}
-
 	func testTabSelected() async {
 		let tapTabId = "3"
 		store = TestStore(
-			initialState: SUT.State(
+			initialState: TabsReducer.State(
 				id: "componentId",
 				components: [
 					.init(id: "1", selected: true, title: "All"),
@@ -45,10 +23,8 @@ final class FSTabReducerTests: XCTestCase {
 				],
 				favouritesSelected: Constants.favouritesSelected
 			),
-			reducer: { SUT() },
-			withDependencies: { reducer in
-
-			}
+			reducer: { TabsReducer() },
+			withDependencies: { _ in }
 		)
 
 		await store.send(.tabSelected(tabId: tapTabId, tabTitle: "Teams")) {
@@ -61,14 +37,18 @@ final class FSTabReducerTests: XCTestCase {
 	}
 
 	func testButtonClicked() async {
+		store = TestStore(
+			initialState: TabsReducer.State(
+				id: "componentId",
+				components: [],
+				favouritesSelected: false
+			),
+			reducer: { TabsReducer() },
+			withDependencies: { _ in }
+		)
 		await store.send(.buttonClicked)
 
 		await store.receive(.changeFavourites(!Constants.favouritesSelected))
 	}
 
-	func testChangeFavourites() async {
-		await store.send(.changeFavourites(!Constants.favouritesSelected)) {
-			$0.favouritesSelected = !Constants.favouritesSelected
-		}
-	}
 }

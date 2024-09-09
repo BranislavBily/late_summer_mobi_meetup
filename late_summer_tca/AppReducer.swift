@@ -5,21 +5,21 @@ public struct AppReducer {
 
 	@ObservableState
 	public struct State: Equatable {
-		var tabs: FSTabReducer.State
-		var currentTab: String
+		var tabs: TabsReducer.State
+		var selectedTab: TabsReducer.State.ID
 		var favourite: Bool
-		var listItems: [ListItemModel]
+		var listItems: IdentifiedArrayOf<ListItemModel>
 	}
 
 	public enum Action: Equatable {
 		case start
-		case tabs(FSTabReducer.Action)
+		case tabs(TabsReducer.Action)
 		case dataReceived([ListItemModel])
 	}
 
 	public var body: some ReducerOf<Self> {
 		Scope(state: \State.tabs, action: \Action.Cases.tabs) {
-			FSTabReducer()
+			TabsReducer()
 		}
 
 		Reduce { state, action in
@@ -27,13 +27,11 @@ public struct AppReducer {
 			case .start:
 				return getData(&state)
 
-			case let .tabs(.tabSelected(tabId: _, tabTitle: tabTitle)):
-				state.listItems = []
-				state.currentTab = tabTitle
+			case let .tabs(.tabSelected(tabId: tabID)):
+				state.selectedTab = tabID
 				return getData(&state)
 
 			case let .tabs(.changeFavourites(favourite)):
-				state.listItems = []
 				state.favourite = favourite
 				return getData(&state)
 
@@ -41,16 +39,17 @@ public struct AppReducer {
 				return .none
 
 			case let .dataReceived(newItems):
-				state.listItems = newItems
+				state.listItems = .init(uniqueElements: newItems)
 				return .none
 			}
 		}
+		._printChanges()
 	}
 
 	private func getData(_ state: inout State) -> Effect<Action> {
-		return .run { [tab = state.currentTab, favourite = state.favourite] send in
+		return .run { [tab = state.selectedTab, favourite = state.favourite] send in
 			let items = await DataSource().getData(type: tab, favourite)
-			await send(.dataReceived(items))
+			await send(.dataReceived(items), animation: .default)
 		}
 	}
 

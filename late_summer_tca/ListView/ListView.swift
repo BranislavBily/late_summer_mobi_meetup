@@ -3,10 +3,10 @@ import SwiftUI
 
 struct ListView: View {
 
-	let items: [ListItemModel]
+	let items: IdentifiedArrayOf<ListItemModel>
 
 	var body: some View {
-		ForEach(items, id: \.self) { item in
+		ForEach(items) { item in
 			ListItemView(model: item)
 		}
 	}

@@ -10,13 +10,13 @@ struct late_summer_tcaApp: App {
 					tabs: .init(
 						id: "0",
 						components: IdentifiedArray(uniqueElements: [
-							FSTabModel(id: "1", selected: true, title: "All"),
-							FSTabModel(id: "2", selected: false, title: "Players"),
-							FSTabModel(id: "3", selected: false, title: "Teams"),
+							TabModel(selected: true, title: "All"),
+							TabModel(selected: false, title: "Players"),
+							TabModel(selected: false, title: "Teams"),
 						]),
 						favouritesSelected: false
 					),
-					currentTab: "All",
+					selectedTab: "All",
 					favourite: false,
 					listItems: .init()
 				),

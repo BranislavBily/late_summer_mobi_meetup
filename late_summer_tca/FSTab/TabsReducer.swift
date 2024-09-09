@@ -1,17 +1,17 @@
 import ComposableArchitecture
 
 @Reducer
-public struct FSTabReducer {
+public struct TabsReducer {
 
 	@ObservableState
 	public struct State: Equatable, Identifiable {
 		public var id: String
-		public var components: IdentifiedArrayOf<FSTabModel>
+		public var components: IdentifiedArrayOf<TabModel>
 		public var favouritesSelected: Bool
 	}
 
 	public enum Action: Equatable {
-		case tabSelected(tabId: String, tabTitle: String)
+		case tabSelected(tabId: State.ID)
 		case buttonClicked
 		case changeFavourites(Bool)
 	}
@@ -19,9 +19,9 @@ public struct FSTabReducer {
 	public var body: some ReducerOf<Self> {
 		Reduce { state, action in
 			switch action {
-			case let .tabSelected(tabId, _):
+			case let .tabSelected(tabId):
 				state.components = IdentifiedArray(uniqueElements: state.components.map { tab in
-					FSTabModel(id: tab.id, selected: false, title: tab.title)
+					TabModel(selected: false, title: tab.title)
 				})
 				state.components[id: tabId]?.selected = true
 				return .none

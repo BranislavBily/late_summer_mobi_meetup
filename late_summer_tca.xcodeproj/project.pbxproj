@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B52899042C8212EC00CDFDAB /* FSTabReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52899022C8212EC00CDFDAB /* FSTabReducerTests.swift */; };
+		B52899042C8212EC00CDFDAB /* TabsReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52899022C8212EC00CDFDAB /* TabsReducerTests.swift */; };
 		B59170532C81BF5E00168A71 /* late_summer_tcaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170522C81BF5E00168A71 /* late_summer_tcaApp.swift */; };
 		B59170552C81BF5E00168A71 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170542C81BF5E00168A71 /* AppView.swift */; };
 		B59170572C81BF6100168A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59170562C81BF6100168A71 /* Assets.xcassets */; };
@@ -15,10 +15,10 @@
 		B591706E2C81BF6100168A71 /* late_summer_tcaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591706D2C81BF6100168A71 /* late_summer_tcaUITests.swift */; };
 		B59170702C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591706F2C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift */; };
 		B591708E2C81E21900168A71 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B591708D2C81E21900168A71 /* ComposableArchitecture */; };
-		B59170952C81E34000168A71 /* FSTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170902C81E34000168A71 /* FSTab.swift */; };
-		B59170962C81E34000168A71 /* FSTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170912C81E34000168A71 /* FSTabModel.swift */; };
-		B59170972C81E34000168A71 /* FSTabReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170922C81E34000168A71 /* FSTabReducer.swift */; };
-		B59170982C81E34000168A71 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170932C81E34000168A71 /* Tab.swift */; };
+		B59170952C81E34000168A71 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170902C81E34000168A71 /* Tabs.swift */; };
+		B59170962C81E34000168A71 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170912C81E34000168A71 /* TabModel.swift */; };
+		B59170972C81E34000168A71 /* TabsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170922C81E34000168A71 /* TabsReducer.swift */; };
+		B59170982C81E34000168A71 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59170932C81E34000168A71 /* TabItem.swift */; };
 		B591709B2C81E48200168A71 /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591709A2C81E48200168A71 /* ListItemModel.swift */; };
 		B591709D2C81E4B800168A71 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591709C2C81E4B800168A71 /* ItemType.swift */; };
 		B591709F2C81E50100168A71 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B591709E2C81E50100168A71 /* ListView.swift */; };
@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B52899022C8212EC00CDFDAB /* FSTabReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTabReducerTests.swift; sourceTree = "<group>"; };
+		B52899022C8212EC00CDFDAB /* TabsReducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsReducerTests.swift; sourceTree = "<group>"; };
 		B591704F2C81BF5E00168A71 /* late_summer_tca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = late_summer_tca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59170522C81BF5E00168A71 /* late_summer_tcaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaApp.swift; sourceTree = "<group>"; };
 		B59170542C81BF5E00168A71 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -55,10 +55,10 @@
 		B59170692C81BF6100168A71 /* late_summer_tcaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = late_summer_tcaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B591706D2C81BF6100168A71 /* late_summer_tcaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaUITests.swift; sourceTree = "<group>"; };
 		B591706F2C81BF6100168A71 /* late_summer_tcaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = late_summer_tcaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B59170902C81E34000168A71 /* FSTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTab.swift; sourceTree = "<group>"; };
-		B59170912C81E34000168A71 /* FSTabModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTabModel.swift; sourceTree = "<group>"; };
-		B59170922C81E34000168A71 /* FSTabReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTabReducer.swift; sourceTree = "<group>"; };
-		B59170932C81E34000168A71 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		B59170902C81E34000168A71 /* Tabs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		B59170912C81E34000168A71 /* TabModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		B59170922C81E34000168A71 /* TabsReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsReducer.swift; sourceTree = "<group>"; };
+		B59170932C81E34000168A71 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		B591709A2C81E48200168A71 /* ListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemModel.swift; sourceTree = "<group>"; };
 		B591709C2C81E4B800168A71 /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		B591709E2C81E50100168A71 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		B59170622C81BF6100168A71 /* late_summer_tcaTests */ = {
 			isa = PBXGroup;
 			children = (
-				B52899022C8212EC00CDFDAB /* FSTabReducerTests.swift */,
+				B52899022C8212EC00CDFDAB /* TabsReducerTests.swift */,
 			);
 			path = late_summer_tcaTests;
 			sourceTree = "<group>";
@@ -165,10 +165,10 @@
 		B59170942C81E34000168A71 /* FSTab */ = {
 			isa = PBXGroup;
 			children = (
-				B59170902C81E34000168A71 /* FSTab.swift */,
-				B59170912C81E34000168A71 /* FSTabModel.swift */,
-				B59170922C81E34000168A71 /* FSTabReducer.swift */,
-				B59170932C81E34000168A71 /* Tab.swift */,
+				B59170902C81E34000168A71 /* Tabs.swift */,
+				B59170912C81E34000168A71 /* TabModel.swift */,
+				B59170922C81E34000168A71 /* TabsReducer.swift */,
+				B59170932C81E34000168A71 /* TabItem.swift */,
 			);
 			path = FSTab;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B59170962C81E34000168A71 /* FSTabModel.swift in Sources */,
+				B59170962C81E34000168A71 /* TabModel.swift in Sources */,
 				B59170A32C81E6BB00168A71 /* AppReducer.swift in Sources */,
 				B591709B2C81E48200168A71 /* ListItemModel.swift in Sources */,
 				B591709D2C81E4B800168A71 /* ItemType.swift in Sources */,
@@ -327,9 +327,9 @@
 				B59170532C81BF5E00168A71 /* late_summer_tcaApp.swift in Sources */,
 				B59170A52C81EBEE00168A71 /* DataSource.swift in Sources */,
 				B59170A12C81E58000168A71 /* ListItemView.swift in Sources */,
-				B59170982C81E34000168A71 /* Tab.swift in Sources */,
-				B59170972C81E34000168A71 /* FSTabReducer.swift in Sources */,
-				B59170952C81E34000168A71 /* FSTab.swift in Sources */,
+				B59170982C81E34000168A71 /* TabItem.swift in Sources */,
+				B59170972C81E34000168A71 /* TabsReducer.swift in Sources */,
+				B59170952C81E34000168A71 /* Tabs.swift in Sources */,
 				B591709F2C81E50100168A71 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52899042C8212EC00CDFDAB /* FSTabReducerTests.swift in Sources */,
+				B52899042C8212EC00CDFDAB /* TabsReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +591,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilybranislav.late-summer-tcaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = late_summer_tca;
@@ -608,6 +609,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bilybranislav.late-summer-tcaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = late_summer_tca;

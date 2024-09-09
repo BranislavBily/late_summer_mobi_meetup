@@ -11,7 +11,7 @@ struct AppView: View {
 
     var body: some View {
 		VStack(spacing: 16) {
-			FSTab(store: store.scope(state: \.tabs, action: \.tabs))
+			Tabs(store: store.scope(state: \.tabs, action: \.tabs))
 			ListView(items: store.listItems)
         }
 		.frame(alignment: .top)
