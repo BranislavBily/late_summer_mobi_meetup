@@ -65,6 +65,7 @@
 		B59170A02C81E58000168A71 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		B59170A22C81E6BB00168A71 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B59170A42C81EBEE00168A71 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		B5D08BDB2C91BB3F00E3BED2 /* late_summer_tca.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = late_summer_tca.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 		B59170462C81BF5E00168A71 = {
 			isa = PBXGroup;
 			children = (
+				B5D08BDB2C91BB3F00E3BED2 /* late_summer_tca.xctestplan */,
 				B59170512C81BF5E00168A71 /* late_summer_tca */,
 				B59170622C81BF6100168A71 /* late_summer_tcaTests */,
 				B591706C2C81BF6100168A71 /* late_summer_tcaUITests */,

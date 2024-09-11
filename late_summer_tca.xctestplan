@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "5D986398-23BE-42AD-A2E3-06A7FCD4E5FB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:late_summer_tca.xcodeproj",
+      "identifier" : "B591704E2C81BF5E00168A71",
+      "name" : "late_summer_tca"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:late_summer_tca.xcodeproj",
+        "identifier" : "B591705E2C81BF6100168A71",
+        "name" : "late_summer_tcaTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:late_summer_tca.xcodeproj",
+        "identifier" : "B59170682C81BF6100168A71",
+        "name" : "late_summer_tcaUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,11 +1,11 @@
 struct DataSource {
 
 	private let data: [ListItemModel] = [
-		.init(hearted: true, text: "Player1", type: .Player),
-		.init(hearted: true, text: "Team1", type: .Team),
-		.init(hearted: false, text: "Player2", type: .Player),
-		.init(hearted: false, text: "Team2", type: .Team),
-		.init(hearted: true, text: "Player3", type: .Player),
+		.init(hearted: true, text: "Lionel Messi", type: .Player),
+		.init(hearted: true, text: "FC Barcelona", type: .Team),
+		.init(hearted: false, text: "Cristiano Ronaldo", type: .Player),
+		.init(hearted: false, text: "Tatran Prešov", type: .Team),
+		.init(hearted: true, text: "Erling Haaland", type: .Player),
 	]
 
 	func getData(type: String, _ hearted: Bool) async -> [ListItemModel] {
