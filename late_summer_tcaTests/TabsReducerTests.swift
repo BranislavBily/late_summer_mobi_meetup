@@ -1,6 +1,6 @@
 import ComposableArchitecture
-import XCTest
 @testable import late_summer_tca
+import XCTest
 
 @MainActor
 final class TabsReducerTests: XCTestCase {
@@ -12,28 +12,21 @@ final class TabsReducerTests: XCTestCase {
 	}
 
 	func testTabSelected() async {
-		let tapTabId = "3"
+		let tapTabId = "Teams"
 		store = TestStore(
 			initialState: TabsReducer.State(
 				id: "componentId",
-				components: [
-					.init(id: "1", selected: true, title: "All"),
-					.init(id: "2", selected: false, title: "Player"),
-					.init(id: tapTabId, selected: false, title: "Teams"),
-				],
+				components: IdentifiedArray(uniqueElements: [
+					TabModel(selected: true, title: "All"),
+					TabModel(selected: false, title: "Players"),
+					TabModel(selected: false, title: "Teams"),
+				]),
 				favouritesSelected: Constants.favouritesSelected
 			),
-			reducer: { TabsReducer() },
-			withDependencies: { _ in }
+			reducer: { TabsReducer() }
 		)
 
-		await store.send(.tabSelected(tabId: tapTabId, tabTitle: "Teams")) {
-			$0.components = [
-				.init(id: "1", selected: false, title: "All"),
-				.init(id: "2", selected: false, title: "Player"),
-				.init(id: tapTabId, selected: true, title: "Teams"),
-			]
-		}
+		await store.send(.tabSelected(tabId: tapTabId)) 
 	}
 
 	func testButtonClicked() async {
@@ -43,8 +36,7 @@ final class TabsReducerTests: XCTestCase {
 				components: [],
 				favouritesSelected: false
 			),
-			reducer: { TabsReducer() },
-			withDependencies: { _ in }
+			reducer: { TabsReducer() }
 		)
 		await store.send(.buttonClicked)
 

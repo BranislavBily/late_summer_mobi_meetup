@@ -15,7 +15,6 @@ struct AppView: View {
 			ListView(items: store.listItems)
         }
 		.frame(alignment: .top)
-        .padding()
 		.task { await store.send(.start).finish() }
     }
 }

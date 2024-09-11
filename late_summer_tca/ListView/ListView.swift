@@ -6,9 +6,12 @@ struct ListView: View {
 	let items: IdentifiedArrayOf<ListItemModel>
 
 	var body: some View {
-		ForEach(items) { item in
-			ListItemView(model: item)
+		List {
+			ForEach(items) { item in
+				ListItemView(model: item)
+			}
 		}
+		.background(Color.clear)
 	}
 
 }

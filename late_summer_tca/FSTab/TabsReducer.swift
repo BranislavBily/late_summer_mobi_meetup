@@ -27,9 +27,7 @@ public struct TabsReducer {
 				return .none
 
 			case .buttonClicked:
-				return .run { [favourite = state.favouritesSelected] send in
-					await send(.changeFavourites(!favourite))
-				}
+				return .send(.changeFavourites(!state.favouritesSelected))
 
 			case let .changeFavourites(value):
 				state.favouritesSelected = value
